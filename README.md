@@ -23,3 +23,8 @@ Write your code in `src/index.js.
 - Run `npm install` in command line
 - Run `npm test` in command line
 - You will see the number of passing and failing tests
+d= b^2 - 4ac
+b^2 = 11 836 904 710 051 600
+
+4ac = 4*-20*130011773690520 = 56
+
