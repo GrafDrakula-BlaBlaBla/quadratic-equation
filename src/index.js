@@ -1,25 +1,17 @@
 module.exports = function solveEquation(equation) {
 let rootsEquation = [];
-let variableEquation, newVariableEquation,
+let varEquation, newVarEquation,
   	 discremenenant, x1, x2;
-// let equation = "-20 * 1^2 - 108797540 * 1 + 130011773690520";
-// let equation = "1 * 1^2 - 70 * 1 + 600";
+  	 
+	varEquation = equation.replace(/\s/g, '');
 
-	// variableEquation = equation.match(/\d{1,}|\w/ig);
-	// 	variableEquation = equation.match(/\S.\d{1,}|\w/ig);
-	variableEquation = equation.replace(/\s/g, '');
-	newVariableEquation = variableEquation.match(/(\-?)\s?(\d{1,})|\w/ig);
-	console.log("newVariableEquation = " + newVariableEquation);
-	// console.log("variableEquation = " + variableEquation);
-	
-	// discremenenant = b^2 - 4 * a * c
-	discremenenant = Math.round((Number(newVariableEquation[3]) * Number(newVariableEquation[3])) - (4 * Number(newVariableEquation[0]) * Number(newVariableEquation[5])));
+	newVarEquation = varEquation.match(/(\-?)\s?(\d{1,})|\w/ig);
 
-// console.log("discremenenant = " + discremenenant);
+	discremenenant = Math.round((Number(newVarEquation[3]) * Number(newVarEquation[3])) - (4 * Number(newVarEquation[0]) * Number(newVarEquation[5])));
 
 	if (discremenenant > 0) {
-		x1 = Math.round((-Number(newVariableEquation[3]) + Math.sqrt(discremenenant)) / (2 * Number(newVariableEquation[0])));
-		x2 = Math.round((-Number(newVariableEquation[3]) - Math.sqrt(discremenenant)) / (2 * Number(newVariableEquation[0])));
+		x1 = Math.round((-Number(newVarEquation[3]) + Math.sqrt(discremenenant)) / (2 * Number(newVarEquation[0])));
+		x2 = Math.round((-Number(newVarEquation[3]) - Math.sqrt(discremenenant)) / (2 * Number(newVarEquation[0])));
     	rootsEquation.push(x1, x2);
     }
 
@@ -34,11 +26,3 @@ let variableEquation, newVariableEquation,
     return rootsEquation.sort(sortRoots);
 }	
 
-	  
-
-/*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
-
-
-
-
-/*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
